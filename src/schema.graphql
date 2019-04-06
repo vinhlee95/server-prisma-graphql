@@ -1,3 +1,6 @@
+# public API schema
+# where client interacts with
+
 #import * from './generated/prisma.graphql'
 
 type Mutation {

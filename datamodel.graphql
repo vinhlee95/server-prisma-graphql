@@ -1,3 +1,6 @@
+# GraphQL Type defs for Prisma db
+# Update and deploy this will create new generated prisma.graphql
+
 type User {
   id: ID! @unique
   name: String!
