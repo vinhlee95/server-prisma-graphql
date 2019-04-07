@@ -4,6 +4,8 @@
  * @author Vinh Le <lethanhvinh95@gmail.com>
  *
  */
+const express = require('express')
+const cookieParser = require('cookie-parser')
 const path = require('path')
 // require dotenv
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
@@ -11,9 +13,9 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 const createServer = require('./createServer')
 const db = require('./db')
 
-const server = createServer()
-
 // TODO: use express middleware to handle cookie (JWT)
+const server = createServer()
+server.express.use(cookieParser())
 
 server.start({
 	cors: {

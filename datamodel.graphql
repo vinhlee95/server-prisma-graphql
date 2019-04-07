@@ -1,10 +1,23 @@
 # GraphQL Type defs for Prisma db
 # Update and deploy this will create new generated prisma.graphql
 
+enum Permission {
+	ADMIN
+	USER
+	ITEMCREATE
+	ITEMUPDATE
+	ITEMDELETE
+	PERMISSIONUPDATE
+}
+
 type User {
   id: ID! @unique
   name: String!
 	email: String!
+	password: String!
+	resetToken: String
+	resetTokenExpiry: String
+	permissions: [Permission]
 }
 
 type Item {
